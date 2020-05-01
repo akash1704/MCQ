@@ -1,0 +1,35 @@
+{%extends 'mcqapp/base.html'%}
+{%block body_block%}
+<div class="jumbotron">
+  <h3>Please login:</h3>
+  <p></p>
+  <form class="" action="{%url 'mcqapp:user_login'%}" method="post">
+    {%csrf_token%}
+    <label for="username">UserName:</label>
+    <input type="text" name="username" placeholder="Enter username here">
+    <p></p>
+    <label for="password">Password:</label>
+    <input type="password" name="password" >
+    <p></p>
+    <input type="submit" name="" value="Login">
+    <p></p>
+    <div class="row">
+        <div class="mx-auto social-container my-2 order-md-1">
+            <button class="btn btn-danger  mb-2">
+                <a href="{%url 'social:begin' 'instagram'%}">Login with Instagram</a>
+            </button>
+            <p></p>
+            <button class="btn btn-primary mb-2">
+                <a href="{% url 'social:begin' 'facebook'%} ">Login with Facebook</a>
+            </button>
+            <p></p>
+            <button class="btn btn-info mb-2">
+                <a href="{% url 'social:begin' 'linkedin'%} ">Login with LinkedIn</a>
+            </button>
+        </div>
+    </div>
+
+  </form>
+</div>
+
+{%endblock%}
